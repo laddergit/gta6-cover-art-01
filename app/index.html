@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vice City Cover Studio — GTA-style cover art maker</title>
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<main class="app">
+  <section class="controls" aria-label="Cover controls">
+    <h1>Vice City Cover Studio</h1>
+    <p class="tagline">Turn your photos into GTA-style poster art. Everything stays on your machine — no uploads, no account, no network.</p>
+
+    <div class="group">
+      <span class="group-label">Photos</span>
+      <div class="row">
+        <label class="file-label">Load photo
+          <input id="photo" type="file" accept="image/*">
+        </label>
+        <button id="sample" type="button">Use sample photo</button>
+        <button id="clear" type="button" class="quiet">Clear</button>
+      </div>
+      <p class="hint" id="panel-name">Panel 1 of 3</p>
+      <p class="hint">Click a panel to pick it, then load a photo into it. Drag a panel to move its photo.</p>
+    </div>
+
+    <div class="group">
+      <span class="group-label">Layout</span>
+      <div class="row" id="layout" role="group" aria-label="Cover layout"></div>
+    </div>
+
+    <div class="group">
+      <span class="group-label">Colour grade</span>
+      <div class="row" id="grade" role="group" aria-label="Colour grade"></div>
+    </div>
+
+    <div class="group">
+      <label>Zoom — selected panel
+        <input id="zoom" type="range" min="100" max="300" value="100">
+        <span id="zoom-value">100%</span>
+      </label>
+    </div>
+
+    <div class="group">
+      <label>Kicker <input id="kicker" type="text" maxlength="40" value="A fan-made cover"></label>
+      <label>Title <input id="title" type="text" maxlength="40" value="Vice City Nights"></label>
+      <label>Subtitle <input id="subtitle" type="text" maxlength="60" value="Leonida, 2026"></label>
+    </div>
+
+    <div class="group">
+      <label>Export size
+        <select id="size"></select>
+      </label>
+      <button id="export" type="button" class="primary">Export PNG</button>
+      <p id="status" role="status"></p>
+    </div>
+  </section>
+  <section class="stage" aria-label="Cover preview">
+    <canvas id="preview" width="1080" height="1080" aria-label="The cover preview"></canvas>
+  </section>
+</main>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>

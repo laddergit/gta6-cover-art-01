@@ -1,0 +1,31 @@
+/* Vice City Cover Studio — a dark neon editor. All system fonts; no external
+   resources, so the app works with the network off. */
+html, body { margin: 0; min-height: 100%; background: #0d0616; color: #f2ecfa; font: 15px/1.45 system-ui, sans-serif; }
+.app { display: flex; gap: 28px; align-items: flex-start; justify-content: center; padding: 24px; box-sizing: border-box; }
+.controls { display: flex; flex-direction: column; gap: 16px; width: 320px; flex: none; }
+.controls h1 { margin: 0; font-size: 26px; font-weight: 900; letter-spacing: -0.5px; background: linear-gradient(90deg, #ff9a3c, #ff2e88); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.tagline { margin: 0; color: #b9aed0; font-size: 13px; }
+.group { display: flex; flex-direction: column; gap: 8px; padding: 12px; background: #1b0f30; border: 1px solid #33204f; border-radius: 10px; }
+.group-label { font-weight: 800; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: #ff8fb8; }
+.row { display: flex; flex-wrap: wrap; gap: 8px; }
+.hint { margin: 0; color: #9d8fb8; font-size: 12px; }
+label { display: flex; flex-direction: column; gap: 6px; font-weight: 600; font-size: 13px; }
+input[type=text], select { font: inherit; padding: 8px 10px; border: 1px solid #4a2f6e; border-radius: 6px; background: #12081f; color: #f2ecfa; }
+input[type=range] { width: 100%; accent-color: #ff2e88; }
+button { font: inherit; font-weight: 700; padding: 9px 12px; border: 1px solid #4a2f6e; border-radius: 6px; background: #2a1747; color: #f2ecfa; cursor: pointer; }
+button:hover { border-color: #ff2e88; }
+button.picked { background: #ff2e88; border-color: #ff2e88; color: #fff; }
+button.primary { background: linear-gradient(90deg, #ff7a3c, #ff2e88); border: 0; color: #fff; font-size: 16px; padding: 12px; }
+button.quiet { background: transparent; }
+.file-label { display: inline-flex; flex-direction: row; align-items: center; gap: 6px; padding: 9px 12px; border: 1px solid #4a2f6e; border-radius: 6px; background: #2a1747; cursor: pointer; font-weight: 700; }
+.file-label input[type=file] { display: none; }
+#status { margin: 0; min-height: 1.2em; color: #8fe3c0; font-size: 13px; }
+.stage { flex: 1; display: flex; justify-content: center; }
+#preview { width: min(78vh, 62vw); height: auto; max-height: 92vh; box-shadow: 0 12px 44px rgba(0, 0, 0, 0.55); border-radius: 4px; cursor: crosshair; touch-action: none; }
+/* Screenshot scenes: cover alone, or the exported PNG alone, filling the window. */
+body.shot-cover .controls { display: none; }
+body.shot-cover .app { padding: 0; }
+body.shot-cover #preview { width: 100vw; height: 100vh; max-height: none; box-shadow: none; border-radius: 0; object-fit: contain; background: #0d0616; }
+body.shot-export .controls, body.shot-export .stage { display: none; }
+body.shot-export .app { padding: 0; }
+body.shot-export #exported { display: block; max-width: 100vw; max-height: 100vh; margin: auto; }
